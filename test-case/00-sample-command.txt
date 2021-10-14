@@ -8,8 +8,13 @@ docker run -it --name robot-test --rm \
 robopabot:1.0 \
 bash -c "pabot \
 -d output --timestampoutputs \
-test01.robot"
+test00.robot"
 
+
+
+### docker-composeでRobot Frameworkのテストケースを実行
+
+TEST_CASE=test00.robot docker-compose run robot-test
 
 
 ### aliasに登録
