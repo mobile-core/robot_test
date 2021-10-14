@@ -1,6 +1,6 @@
-FROM python:3-slim-buster
+FROM python:3.9.7-slim-buster
 
-RUN apt update && apt install -y curl &&\
+RUN apt update && apt install -y curl libffi-dev &&\
 pip3 install --upgrade pip &&\
 pip3 install \
 --no-cache-dir \
