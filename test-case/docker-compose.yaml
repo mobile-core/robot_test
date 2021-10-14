@@ -1,0 +1,12 @@
+version: "3.3"
+services:
+  robot-test:
+    image: mobilecore/robopabot:1.0
+    hostname: robot-test
+    container_name: robot-test
+    volumes:
+      - "$HOME/.ssh/id_rsa:/tmp/id_rsa"
+      - "$PWD:/work:Z"
+    network_mode: "host"
+    working_dir: /work
+    command: /bin/bash -c "pabot -d output --timestampoutputs ${TEST_CASE}"
